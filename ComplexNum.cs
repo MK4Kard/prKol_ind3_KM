@@ -9,49 +9,49 @@ namespace prKol_ind3_1_KM
 {
     class ComplexNum
     {       
-        public string Add(string n, string m)
+        public string Add(string n, string m) //сложение комплексных чисел 
         {
-            var firstN = ComplexParts(n);
-            var firstM = ComplexParts(m);
+            var firstN = ComplexParts(n); // первое комплексное число
+            var firstM = ComplexParts(m); // второе комплексное число
 
-            int a = Convert.ToInt32(firstN[0]) + Convert.ToInt32(firstM[0]);
-            int b = Convert.ToInt32(firstN[1]) + Convert.ToInt32(firstM[1]);
+            int a = Convert.ToInt32(firstN[0]) + Convert.ToInt32(firstM[0]); // сумма действительных чисел
+            int b = Convert.ToInt32(firstN[1]) + Convert.ToInt32(firstM[1]); // сумма мнимых чисел
 
             string sum = Answer(a, b);
 
             return sum;
         }
-        public string Sub(string n, string m)
+        public string Sub(string n, string m) // вычитание комплексных чисел
         {
-            var firstN = ComplexParts(n);
-            var firstM = ComplexParts(m);
+            var firstN = ComplexParts(n); // первое комплексное число
+            var firstM = ComplexParts(m); // второе комплексное число
 
-            int a = Convert.ToInt32(firstN[0]) - Convert.ToInt32(firstM[0]);
-            int b = Convert.ToInt32(firstN[1]) - Convert.ToInt32(firstM[1]);
+            int a = Convert.ToInt32(firstN[0]) - Convert.ToInt32(firstM[0]); // разность действительных чисел
+            int b = Convert.ToInt32(firstN[1]) - Convert.ToInt32(firstM[1]); // разность мнимых чисел
 
             string sum = Answer(a, b);
 
             return sum;
         }
-        public string Mult(string n, string m)
+        public string Mult(string n, string m) // умножение комплексных чисел
         {
-            var firstN = ComplexParts(n);
-            var firstM = ComplexParts(m);
+            var firstN = ComplexParts(n); // первое комплексное число
+            var firstM = ComplexParts(m); // второе комплексное число
 
             int a1 = Convert.ToInt32(firstN[0]);
             int a2 = Convert.ToInt32(firstM[0]);
             int b1 = Convert.ToInt32(firstN[1]);
             int b2 = Convert.ToInt32(firstM[1]);
 
-            int a = a1 * a2 - b1 * b2;
-            int b = a1 * b2 + b1 * a2;
+            int a = a1 * a2 - b1 * b2; // действительная часть произведения
+            int b = a1 * b2 + b1 * a2; // мнимая часть произведения
 
             string sum = Answer(a, b);
 
             return sum;
         }
 
-        private ArrayList ComplexParts(string complexNum)
+        private ArrayList ComplexParts(string complexNum) // разделение комплексных чисел на числа
         {
             var parts = new ArrayList();
 
@@ -79,9 +79,9 @@ namespace prKol_ind3_1_KM
 
             return parts;
         }
-        private string Answer(int a, int b)
+        private string Answer(int a, int b) // Вывод ответа
         {
-            var parts = new[] { a.ToString() }.Concat(b > 1 ? new[] { $"+{b}i" } :
+            var parts = new[] { a.ToString() }.Concat(b > 1 ? new[] { $"+{b}i" } : // проверка мнимой части
                 b < -1 ? new[] { $"{b}i" } :
                 b == 0 ? new[] { $"" } :
                 b == 1 ? new[] { $"+i" } :

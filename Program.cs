@@ -81,7 +81,7 @@ namespace prKol_ind3_1_KM
 
             Console.ReadLine();
         }
-        static bool ValComplexNum(string z)
+        static bool ValComplexNum(string z) // проверка комплексного числа на правильную запись
         {
             string pattern = @"^([-+]?d*.?d*)s*([-+]s*d*.?d*)i$";
 
